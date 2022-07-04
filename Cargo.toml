@@ -1,0 +1,25 @@
+[package]
+name = "klu"
+version = "0.4.0"
+edition = "2021"
+license = "MIT"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = []
+cli = ["dep:clap"]
+
+[dependencies]
+thiserror = "1.0.31"
+walkdir = "2.3.2"
+clap = { version = "3.2.8", optional = true, features = ["derive"] }
+
+
+
+
+
+
+[[bin]]
+name = "klu"
+path = "src/bin/main.rs"
+required-features = ["cli"]
